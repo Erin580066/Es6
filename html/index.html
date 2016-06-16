@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"
+//			变量let 与 var的区别
+//		{
+//			var str = 'bbb'
+//			let person = 'aaa'
+//			console.log(str);//在{}块级作用域内能找到
+//			console.log(person);//在{}块级作用域内能找到
+//		}
+//		console.log(person)//在{}块级作用域外会报错
+//		console.log(str)//在{}块级作用域外可以找到
+//		常量:
+//			在定义之后是固定不变的,即为常量
+//			const 用来声明一个常量:
+//				1.常量不能进行修改
+//				2.重复声明会报错
+//				3.常量不能进行修改,但是常量如果保存的是一个复杂类型,复杂类型可以修改值
+//		const a = 10;
+//		a = 5;//这里修改了所以会报错
+//		const a = 1;//这里重复声明了所以也会报错
+//		console.log(a)
+
+		const obj = {};
+		obj.abc = {};//复杂类型重新复制了但不会报错
+		obj.abc = 10;
+		console.log(obj.abc)
+	</script>
+</body>
+</html>
