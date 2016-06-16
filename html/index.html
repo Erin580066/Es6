@@ -27,10 +27,54 @@
 //		const a = 1;//这里重复声明了所以也会报错
 //		console.log(a)
 
-		const obj = {};
-		obj.abc = {};//复杂类型重新复制了但不会报错
-		obj.abc = 10;
-		console.log(obj.abc)
+//		const obj = {};
+//		obj.abc = {};//复杂类型重新复制了但不会报错
+//		obj.abc = 10;
+//		console.log(obj.abc)
+		
+		
+//		变量解构赋值
+//			数组和对象中提取值,对变量进行赋值
+//			数组解构赋值:按照顺序进行解构
+//			对象解构赋值:可以不按顺序进行解构
+//		var arr = [1,2,3,4,5];
+//		var num1 = arr[0];
+//		var num2 = arr[1];
+//		var [num1,num2,num3] = arr;
+//		var [num1,[num2,num3]] = [1,[2,3]];
+		
+//		var obj = {
+//			n:'momo',
+//			say:function(){}
+//		}
+//		var {say,n} = obj;
+//		console.log(n.say)//一定要在高版本浏览器下测试
+
+
+//		字符串的扩展:
+//		Es6加强了对Unicode的支持,并且扩展了字符串对象
+//		var s = '𠮷'
+//		console.log(s.codePointAt());//134071
+//		console.log(String.fromCodePoint(134071))// 𠮷
+//		console.log('\u{20BB7}')//20BB7是字符的码点
+//		console.log('\uD842\uDFB7')///之前的码点是\uD842\uDFB7  𠮷
+//		var str = '';
+//		for (var i = 134071; i < 135071; i++) {
+//			str += String.fromCodePoint(i)
+//		}
+//		document.body.innerHTML = str;//里面全是四字节的字  
+//		𠮷𠮸𠮹𠮺𠮻𠮼𠮽𠮾𠮿𠯀𠯁𠯂𠯃𠯄𠯅𠯆𠯇𠯈𠯉𠯊𠯋𠯌𠯍𠯎𠯏𠯐𠯑𠯒𠯓𠯔𠯕
+		
+		var str = 'momo';
+		console.log(str.repeat(5));//对字符串平铺   打印的是momomomomomomomomomo
+		var str1 = '0';
+//		console.log(str1.repeat(100).split(''));//把str 分割成字符串数组 即100 个 0
+//		console.log(str.includes('mo'));//返回的是true
+//		console.log(str.includes('momomo'));//false
+//		console.log(str.startsWith('m'));//true  startsWith是否在头部
+		console.log(str.startsWith('o'));//false
+		console.log(str.endsWith('mo'));//true endsWith是否在尾部
+		console.log(str.endsWith('m'));//false 
 	</script>
 </body>
 </html>
