@@ -104,19 +104,79 @@
 //		map.forEach(function(value,key){
 //			console.log(value,key);
 //		})//map forEach的第二个参数代表第一个参数内部this的指向
+
+//		9:遍历接口Iterator和Symbol
+//		var obj = {
+//			a:1,
+//			b:2,
+//			c:3
+//		}
+//		Es6引入了一种新 的数据类型Symbol,表示对无二的Id,它通过Symbol函数生成
+//		var symbol1 = Symbol('test');
+//		var symbol2 = Symbol('test');
+////		console.log(symbol)
+//		console.log(symbol1==symbol2)///false
+//		obj[Symbol.iterator] = function(){
+//			var self = this;
+//			var keys = Object.keys(this);
+//			var index = 0;
+//			return {
+//				next(){
+//					index++
+//					if(index<keys.length){//遍历还没有结束
+//						return {
+//							value:{
+//								keys:keys[index],
+//							value:self[index++],
+//							}
+//							done:false
+//						}
+//					}else{
+//						return {
+//							done:true;//遍历结束
+//						}
+//					}
+//				}
+//			}
+//		}
+//		for(var {key,value} of obj){
+//			console.log(key,value)
+//		}
+
+//		10：Generator函数
+//		function* fn(){
+//			alert(1);
+//			yield;
+//			alert(2);
+//			yield;
+//			alert(3);
+//			yield;
+//			alert(4);
+//			yield;
+//		}
+//		var f = fn();
+////		f.next();
+////		f.next();
+////		f.next();
+////		f.next();
+//		for(var value of fn()){
+//			console.log(value)
+//		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		var obj = {
+			a:1,
+			b:2,
+			c:3
+		}
+		obj[Symbol.iterato] = function* (){
+			var keys = Object.keys(this);
+			for(var i = 0;i<keys,length;i++){
+				yield this[keys[i]]
+			}
+		}
+		for(var value of obj){
+			console.log(value);
+		}
 		
 		
 	</script>
