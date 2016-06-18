@@ -5,6 +5,11 @@
 	<title></title>
 </head>
 <body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
 	<script type="text/javascript">
 		"use strict"
 //			变量let 与 var的区别
@@ -65,16 +70,131 @@
 //		document.body.innerHTML = str;//里面全是四字节的字  
 //		𠮷𠮸𠮹𠮺𠮻𠮼𠮽𠮾𠮿𠯀𠯁𠯂𠯃𠯄𠯅𠯆𠯇𠯈𠯉𠯊𠯋𠯌𠯍𠯎𠯏𠯐𠯑𠯒𠯓𠯔𠯕
 		
-		var str = 'momo';
-		console.log(str.repeat(5));//对字符串平铺   打印的是momomomomomomomomomo
-		var str1 = '0';
+//		var str = 'momo';
+//		console.log(str.repeat(5));//对字符串平铺   打印的是momomomomomomomomomo
+//		var str1 = '0';
 //		console.log(str1.repeat(100).split(''));//把str 分割成字符串数组 即100 个 0
 //		console.log(str.includes('mo'));//返回的是true
 //		console.log(str.includes('momomo'));//false
 //		console.log(str.startsWith('m'));//true  startsWith是否在头部
-		console.log(str.startsWith('o'));//false
-		console.log(str.endsWith('mo'));//true endsWith是否在尾部
-		console.log(str.endsWith('m'));//false 
+//		console.log(str.startsWith('o'));//false
+//		console.log(str.endsWith('mo'));//true endsWith是否在尾部
+//		console.log(str.endsWith('m'));//false 
+		
+//		模板字符串的拼接
+//      var name = 'momo';
+//      var age = 40;
+////		console.log(`你的姓名:${name}你的年龄:${age}`)
+////		console.log(`你的姓名:${name+age}你的年龄:${age}`)
+//		console.log(`你的姓名:${(function(name){
+//			return name.repeat(2)
+//		}(name))}你的年龄:${age}`)
+		
+//		二进制和八进制
+//		var num = 0b11;//二进制
+//		console.log(num);//3
+//		var num1 =0o11;//八进制
+//		console.log(num1);//9
+		
+//		Math方法
+//		Math.trunc()方法是去除小数点的
+//		var num = 20.20;
+//		console.log(Math.trunc(num));///Math.trunc()方法是去除小数点的
+//		Math.sign(20)///判断一个数是正数负数还是0   返回值是1 0 -1
+//		console.log(Math.sign(20))// 1
+//		console.log(Math.sign(-20))// -1
+//		有0和-0之分
+//		console.log(Math.sign(0))//  0
+//		console.log(Math.sign(-0))//-0
+//		console.log(Math.hypot(2))//返回平方和的平方根
+		
+		
+//		Array.from(list) 把list转换成数组
+//		Array.from()把类数组对象转换成真正的数组
+//		var divs = document.getElementsByTagName('div');
+//		var eles = Array.from(divs);
+//		console.log(eles);//[div, div, div, div, div]
+		
+		
+//		Array.of()//把参数转换成数组
+//		var arr = new Array(5)//不会装成数组  会显示数组的长度 返回出来是个[] 写两个参数就可以出来了如[]
+//		var arr = Array.of(1,2,3,4,5);
+//		console.log(arr);//[1, 2, 3, 4, 5]
+
+//		Array.find()//	遍历整个数组，遍历过程中调用回调函数，如果回调函数返回值为true，则返回正在遍历的元素。
+//						如果所有元素都不符合条件则返回undefined
+//		var arr = ['1','2','3','4'];
+//		console.log(arr.find(function(value,index,array){
+//			console.log(value,index,array)
+//			if(index == 2){
+//				return true;
+//			}
+//		}))
+//		console.log(arr.findIndex(function(value,index,array){
+//			console.log(value,index,array)
+//			if(value == '1'){
+//				return true;
+//			}
+//		}))
+		
+//		数组的填充arr.fill()
+//		var arr = [];
+//		arr.length = 10;
+//		console.log(arr.fill(7))//  [7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+//		console.log(arr.fill(10,2,8))
+		
+//		for of遍历方法
+//		var arr = [1,2,3,4,5];
+//		for(var key of arr.keys()){
+//			console.log(key)///下标
+//		}
+//		arr.entries()提供数组key和value的遍历接口
+//		for(var [key,value] of arr.entries()){
+//			console.log(key,value)
+//		}
+		
+//		对象的简洁表示法
+//		function fn(x,y){
+//			x*= 5;
+//			y*= 3
+////			return {
+////				x:x,
+////				y:y
+////			}           //Object {x: 15, y: 12}
+//			return {x,y}//Object {x: 15, y: 12}
+//		}
+//		console.log(fn(3,4));
+//		
+//		
+//		var obj = {
+//			name:'momo',
+//			say:function(){
+//				return this.name;
+//			}
+//		}
+//		console.log(obj.say())
+		//简写的方法可以把function省略掉
+//		var obj = {
+//			name:'momo',
+//			say:(){
+//				return this.name;
+//			}
+//		}
+//		console.log(obj.say())
+//		var o = {};
+//		var obj = {
+//			[o]:[]//[o]可以是任何东西
+//		}
+//		console.log(obj[o])
+
+//		Object.is()可以判断参数是否严格相等
+//		alert(0===-0);//true
+//		alert(NaN===NaN)//false
+//		console.log(Object.is(0,-0))//false
+//		console.log(Object.is(NaN,NaN))//true
+
+		
+
 	</script>
 </body>
 </html>
